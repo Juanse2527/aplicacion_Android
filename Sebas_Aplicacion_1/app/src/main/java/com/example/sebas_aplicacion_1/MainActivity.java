@@ -7,7 +7,6 @@ import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,33 +27,19 @@ public class MainActivity extends AppCompatActivity {
         btnIrASecondActivity = findViewById(R.id.btnIrASecondActivity);
         webViewMain = findViewById(R.id.webViewMain);
 
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                nombreUsuario.setText("Presioné Boton Uno");
-            }
-        });
+        String mensajeDesdePantallaTwo = getIntent().getStringExtra("mensaje");
 
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                nombreUsuario.setText("Presioné Boton Dos");
-            }
-        });
+        if (mensajeDesdePantallaTwo != null) {
+            nombreUsuario.setText(mensajeDesdePantallaTwo);
+        }
 
-        btnIrASecondActivity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        btn1.setOnClickListener(view -> nombreUsuario.setText(getString(R.string.presione_boton_uno)));
+        btn2.setOnClickListener(view -> nombreUsuario.setText(getString(R.string.presione_boton_dos)));
 
-                Intent intent = new Intent(MainActivity.this, pantalla_two.class);
-
-
-                intent.putExtra("mensaje", "Hola Juan Sebastian");
-
-
-                startActivity(intent);
-            }
-        });
+        btnIrASecondActivity.setOnClickListener(view ->
+                startActivity(new Intent(MainActivity.this, pantalla_two.class)
+                        .putExtra("mensaje", getString(R.string.hola_juan_sebastian)))
+        );
     }
 
     @Override

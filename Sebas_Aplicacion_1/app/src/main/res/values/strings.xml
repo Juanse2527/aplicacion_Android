@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Sebas_Aplicacion_1</string>
+    <string name="presione_boton_uno">Presioné Boton Uno</string>
+    <string name="presione_boton_dos">Presioné Boton Dos</string>
+    <string name="hola_juan_sebastian">Hola Juan Sebastian</string>
+    <string name="volviendo_de_pantalla_dos">Volviendo de pantalla dos</string>
 </resources>
