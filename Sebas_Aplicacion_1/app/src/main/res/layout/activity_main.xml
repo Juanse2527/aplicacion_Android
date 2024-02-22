@@ -34,7 +34,7 @@
         android:id="@+id/btnIrASecondActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ir a SecondActivity"
+        android:text="Ir a la pagina siguiente"
         android:layout_below="@id/btn2"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"/>
